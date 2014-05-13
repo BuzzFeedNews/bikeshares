@@ -50,8 +50,8 @@ class Hubway(bikeshares.program.BikeShareProgram):
             "lat": parsed["lat"],
             "lng": parsed["lng"],
             "capacity": parsed["nb_docks"],
-            "open_date": parsed["install_date"],
-            "close_date": parsed["last_day"]
+            "install_date": parsed["install_date"],
+            "removal_date": parsed["last_day"]
         }).groupby("id").first().reset_index()
 
         return mapped

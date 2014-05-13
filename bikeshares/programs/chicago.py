@@ -48,7 +48,7 @@ class Divvy(bikeshares.program.BikeShareProgram):
             "lat": parsed["latitude"],
             "lng": parsed["longitude"],
             "capacity": parsed["dpcapacity"],
-            "open_date": parsed["online date"]
+            "install_date": parsed["online date"]
         }).groupby("id").first().reset_index()
 
         return mapped
