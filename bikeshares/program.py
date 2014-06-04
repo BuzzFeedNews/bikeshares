@@ -21,6 +21,10 @@ class TripSubset(pd.DataFrame):
     def by_day(self): return self.by_interval("D", "day")
 
     def by_month(self): return self.by_interval("MS", "month")
+
+    def get_time_range(self, event="start"):
+        times = self[event + "_time"]
+        return (times.min(), times.max())
     
 class BikeShareProgram(object):
     def __init__(self):
