@@ -3,6 +3,7 @@ import pandas as pd
 class TripSubset(object):
     aliased_methods = [
         "head", "tail",
+        "groupby",
         "to_csv", "to_json", "to_dict", "get_values"
     ]
 
@@ -10,6 +11,9 @@ class TripSubset(object):
         self.df = pd.DataFrame(frame)
         for m in self.aliased_methods:
             setattr(self, m, getattr(self.df, m))
+
+    def __getitem__(self, val):
+        return self.df.__getitem__(val)
 
     def by_station(self):
         started = self.df.groupby("start_station").size()
