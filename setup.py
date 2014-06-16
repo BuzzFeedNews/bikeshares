@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
     name="bikeshares",
     version="0.0.0",
-    description="Standardized access to the data published by bicycle sharing programs.",
+    description="Standardized parsers for data published by bicycle-sharing programs. Currently supporting: NYC's Citi Bike, Chicago's Divvy, and Boston's Hubway.",
     long_description="",
     classifiers=[
         "Development Status :: 3 - Alpha",
